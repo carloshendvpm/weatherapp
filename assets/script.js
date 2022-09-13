@@ -10,10 +10,11 @@ let keyApi = "0cfc9d368c5821df643eb77f4182320d";
 let api;
 
 
-inputField.addEventListener("keyup", (e) => {
+inputField.addEventListener("keyup", e => {
   //se o usuário pressionar o botão enter e se o valor do input não for vazio
   if (e.key == "Enter" && inputField.value != "") {
     requestApi(inputField.value);
+    console.log("teste.")
   }
 });
 
@@ -39,24 +40,24 @@ function onError(error) {
 
 function requestApi(city) {
   api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${keyApi}`;
+  fetchData();
 }
 
 function fetchData() {
   infoTxt.innerText = "Obtendo detalhes do tempo...";
   infoTxt.classList.add("pending");
-  fetch(api)
-    .then((response) => response.json())
-    .then((result) => weatherDetails(result));
+  fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
+    infoTxt.innerText = "Algo deu errado :(";
+    infoTxt.classList.replace("pending", "error");
+  })
 }
 
 function weatherDetails(info) {
-  infoTxt.classList.replace("pending", "error");
   if (info.cod == "404") {
-    infoTxt.innerText = `${input.inputField} não é um nome válido para cidade`;
+    infoTxt.classList.replace("pending", "error");
+    infoTxt.innerText = `${inputField.value} não é um nome válido para cidade`;
   } else {
-
-    
-
+  
     const city = info.name;
     const country = info.sys.country;
     const { description, id } = info.weather[0]; 
@@ -81,10 +82,11 @@ function weatherDetails(info) {
     wrapper.querySelector(".location span").innerText = `${city}, ${country}`;
     wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
     wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
-
     infoTxt.classList.remove("pending", "error");
+
+    infoTxt.innerText = "";
+    inputField.value = "";
     wrapper.classList.add("active");
-    console.log(info);
   }
 }
 arrowBack.addEventListener("click", () => {
