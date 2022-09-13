@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Um site para conferir o clima e humidade de um local desejado.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -12,6 +13,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileImage" content="assets/images/144.png">
+  <meta name="msapplication-TileColor" content="#31506F">
+  <meta name="theme-color" content="#4D5360" />
+  <link rel="shortcut icon" sizes="192x192" href="assets/images/196.png">
+  <link rel="shortcut icon" sizes="128x128" href="assets/images/128.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather App">
+  <link rel="apple-touch-icon" href="assets/images/144.png">
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/images/167.png">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link href="assets/images/ios/ipad.png" sizes="3200x4267" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/ipadpro.png" sizes="3475x4633" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/ipadpro2.png" sizes="4267x5692" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/Iphone6Plus.png" sizes="2588x4600" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/Iphone7.png" sizes="1563x2779" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/IphoneSE-05.png" sizes="1333x2367" rel="apple-touch-startup-image" />
+  <link href="assets/images/ios/IphoneX-05.png" sizes="2344x5075" rel="apple-touch-startup-image" />
+
 </head>
 
 <body>
@@ -27,7 +54,7 @@
       <button>Usar minha localização</button>
     </section>
     <section class="weather-part">
-      <img src="assets/images/cloud.svg" alt="Icone de Temperatura">
+      <images src="assets/images/cloud.svg" alt="Icone de Temperatura">
       <div class="temp">
         <span class="numb">_</span>
         <span class="deg">°</span>C
@@ -60,6 +87,11 @@
     </section>
   </div>
   <script src="assets/script.js"></script>
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+  </script>
 </body>
 
 </html>
