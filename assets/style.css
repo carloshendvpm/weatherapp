@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 :root {
   --main-color: #8783d1;
   --bg-color:#3A405A;
+}
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
 }
 *{
   margin: 0;
@@ -112,7 +120,7 @@ header i{
   transition: 0.3s ease;
 }
 .input-part button:hover{
-  background: #b209f5;
+  background: #5c09f5;
 }
 .wrapper .weather-part{
   display: none;
