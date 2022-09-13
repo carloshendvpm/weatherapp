@@ -27,6 +27,12 @@ locationBtn.addEventListener("click", () => {
   }
 });
 
+
+function requestApi(city) {
+  api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${keyApi}`;
+  fetchData();
+}
+
 function onSuccess(position) {
   const { latitude, longitude } = position.coords; // obtem latitude e longitude do user a partir do obj coord
   api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${keyApi}`;
@@ -38,10 +44,6 @@ function onError(error) {
   infoTxt.classList.add("error");
 }
 
-function requestApi(city) {
-  api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${keyApi}`;
-  fetchData();
-}
 
 function fetchData() {
   infoTxt.innerText = "Obtendo detalhes do tempo...";
