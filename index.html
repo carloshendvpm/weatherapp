@@ -17,11 +17,43 @@
       <i class="bx bx-left-arrow-alt"></i>
       WeatherApp
     </header>
-    <section>
-      <p class="instruction-txt">Digite um nome de cidade válido.</p>
-      <input type="text" placeholder="Digite o nome da cidade" spellcheck="false">
+    <section class="input-part">
+      <p class="info-txt">Digite um nome de cidade válido.</p>
+      <input type="text" placeholder="Digite o nome da cidade" spellcheck="false" required>
       <div class="separator"></div>
       <button>Usar minha localização</button>
+    </section>
+    <section class="weather-part">
+      <img src="assets/images/cloud.svg" alt="Icone de Temperatura">
+      <div class="temp">
+        <span class="numb">19</span>
+        <span class="deg">°</span>C
+      </div>
+      <div class="weather">Nuvens Espaçadas</div>
+      <div class="location">
+        <i class="bx bx-map"></i>
+        <span>Recife, Brasil</span>
+      </div>
+      <div class="bottom-details">
+        <div class="column feels">
+          <i class="bx bxs-thermometer"></i>
+          <div class="details">
+            <div class="temp">
+              <span class="numb">24</span>
+              <span class="deg">°</span>C
+            </div>
+            <p>Sensação Têrmica</p>
+          </div>
+        </div>
+        <div class="column humidity">
+          <i class="bx bxs-droplet-half"></i>
+          <div class="details">
+              <span class="numb">84%</span>
+            <p>Humidade</p>
+          </div>
+        </div>
+        
+      </div>
     </section>
   </div>
 </body>
