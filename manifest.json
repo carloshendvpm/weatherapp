@@ -1,4 +1,5 @@
 {
+  "shortcuts": [],
   "name": "Weather App",
   "short_name": "Weather App",
   "description": "Um site para conferir o clima e humidade de um local desejado.",
@@ -42,11 +43,14 @@
     {
       "src": "assets/images/512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "index.html",
   "display": "standalone",
+  "orientation":"portrait",
   "background_color": "#000003",
-  "theme_color": "#8783d1"
+  "theme_color": "#8783d1",
+  "categories": ["weather", "clima", "tempo"]
 }
